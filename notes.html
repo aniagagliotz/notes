@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://use.typekit.net/vjq3fgl.css">
+<link rel="stylesheet" href="notes.css">
+<style>
+body{
+margin: 0;
+padding:0;}
+ #myDIV {
+   width: 100vw;
+   height: 100vh;
+   position: fixed;
+   padding: 0 0;
+   text-align: center;
+   background-color: rgb(255, 255, 255);
+ }
+</style>
+</head>
+<body>
+
+ <div id="myDIV">
+ <br><br>
+ <a id="hideBtn">NOTES</a>
+</div>
+
+<p>
+  <img class="koskhol" src="koskhol.jpeg" id="k">
+  <img id="linkedImage" src="ktesto.png" alt="ktesto" />
+</p>
+<p>
+  <img class="baciarsiigomiti" src="baciarsiigomiti.jpeg" id="b">
+  <img id="linkedImage" src="btesto.jpeg" alt="btesto" />
+</p>
+<p>note 3</p>
+
+
+<script>
+const div = document.getElementById("myDIV");
+const button = document.getElementById("hideBtn");
+const images = document.querySelectorAll(".koskhol, .baciarsiigomiti");
+
+button.addEventListener("click", () => {
+  div.style.display = "none";
+
+  images.forEach(img => {
+    img.style.visibility = "visible";
+    img.style.opacity = "0.18";
+  });
+});
+</script>
+
+
+
+<script>
+const linked = document.getElementById("linkedImage");
+
+const links = {
+  k: "ktesto.png",
+  b: "btesto.jpeg"
+};
+
+let active = null;
+
+images.forEach(img => {
+  img.addEventListener("click", () => {
+
+    if (active === img) {
+      img.style.opacity = "0.18";
+      linked.style.opacity = "0";
+      linked.style.visibility = "hidden";
+      active = null;
+      return;
+    }
+
+    images.forEach(i => i.style.opacity = "0.18");
+
+    img.style.opacity = "1";
+    linked.src = links[img.id];
+    linked.style.visibility = "visible";
+    linked.style.opacity = "1";
+
+    active = img;
+  });
+});
+</script>
+
+
+
+
+</body>
+</html>
