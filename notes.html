@@ -5,92 +5,226 @@
 <link rel="stylesheet" href="https://use.typekit.net/vjq3fgl.css">
 <link rel="stylesheet" href="notes.css">
 <style>
-body{
-margin: 0;
-padding:0;}
- #myDIV {
-   width: 100vw;
-   height: 100vh;
-   position: fixed;
-   padding: 0 0;
-   text-align: center;
-   background-color: rgb(255, 255, 255);
- }
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#myDIV {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+padding-top: 15vh;
+}
+
+#hideBtn {
+  font-family: "deseo-medium", sans-serif;
+  color: transparent;
+  -webkit-text-stroke: 1px rgb(0, 0, 0);
+  font-weight: 100;
+  font-size: 340px;
+  cursor: pointer;
+  
+}
+
+#images img {
+  position: absolute;
+  opacity: 0;
+  width: 200px;
+  cursor: pointer;
+  transition: opacity 1s ease;
+  border:1px;
+}
+
+
+.textbox {
+  position: absolute;
+  background: white;
+  border: 1px solid black;
+  padding: 10px;
+  display: none;
+  width: 800px;
+  font-family: "noto-sans", sans-serif;
+font-weight: 400;
+font-style: normal;
+font-size: 12px;
+}
+
+#textj{
+  font-family: "noto-sans", sans-serif;
+font-weight: 400;
+font-style: italic;
+}
+
+.fixed-text{
+position: fixed;      
+  top: 36px;            
+  left: 36px;  
+  font-family: "noto-sans", sans-serif;
+font-weight: 400;         
+  font-size: 12px;
+  font-style: italic;
+  color: black;
+  pointer-events: none; 
+  user-select: none;    
+  z-index: 9999;  
+}
+
+.fixed-text2{
+position: fixed;      
+  bottom: 36px;            
+  right: 36px;  
+  font-family: "noto-sans", sans-serif;
+font-weight: 400;         
+  font-size: 12px;
+  font-style: italic;
+  color: black;
+  pointer-events: none; 
+  user-select: none;    
+  z-index: 9999;  
+}
+
+.fixed-text3 {
+  position: fixed;      
+  top: 50px;            
+  right: 180px;  
+  font-family: "noto-sans", sans-serif;
+font-weight: 400;     
+  color: black;  
+  font-size: 12px;
+  pointer-events: none; 
+  user-select: none;    
+  z-index: 9999; 
+}
 </style>
 </head>
 <body>
 
- <div id="myDIV">
- <br><br>
- <a id="hideBtn">NOTES</a>
+<div id="myDIV">
+  <a id="hideBtn">NOTES</a>
 </div>
 
-<p>
-  <img class="koskhol" src="koskhol.jpeg" id="k">
-  <img id="linkedImage" src="ktesto.png" alt="ktesto" />
-</p>
-<p>
-  <img class="baciarsiigomiti" src="baciarsiigomiti.jpeg" id="b">
-  <img id="linkedImage" src="btesto.jpeg" alt="btesto" />
-</p>
-<p>
-  <img class="" src="" id="n">
-  <img id="" src="" alt="ntesto" />
-</p>
+<div class="fixed-text">notes</div>
+<div class="fixed-text2">*source: mainly my roomates</div>
+<div class="fixed-text3">write WHATEVER you want</div>
 
+
+<form id="outer-circle">
+  <div class="inner-circle">
+    <textarea id="textinput" placeholder="Annotazioni..."></textarea>
+    <input type="submit" value="submit">
+  </div>
+</form>
+<div id="output"></div>
+
+
+<div id="images">
+
+  <p>
+    <img src="baciarsiigomiti.jpeg" style="top:200px; left:88px;" onclick="toggleDiv('textb')">
+    <div class="textbox" id="textb" style="top:320px; left:100px;">
+BACIARSI I GOMITI <br>by me
+<br><br>
+(to kiss one’s elbows) <br>
+Is an Italian idiom meaning to be extremely lucky or 
+thrilled by something incredibly fortunate 
+happening, something so rare you’d do the impossible 
+act of kissing your own elbow in sheer joy.
+It signifies overwhelming happiness about an 
+unexpected, wonderful event.
+<br><br>
+-If I get that promotion, I’ll kiss my elbows!
+</div>
+  </p>
+
+  <p>
+    <img src="koskhol.jpeg" style="top:75px; left:108px;" onclick="toggleDiv('textk')">
+    <div class="textbox" id="textk" style="top:200px; left:50px;">کصخل->KOSKHOL
+<br>by Erphaneh & Sara
+<br><br>
+idiot <br>
+It is a persian vulgar way (street language) of saying idiot. 
+It litteraly means crazy pussy. 
+I don’t know why we use the word pussy in everything but it must 
+have 10000 year old root cause.
+<br><br>
+-Could there be a bigger koskhol 
+than you? <br>
+-stop your koskhol bazi (fooling 
+around) and get your ass over 
+here
+</div>
+  </p>
+
+  <p>
+    <img src="naiman.jpeg" style="top:60px; left:250px;" onclick="toggleDiv('textn')">
+    <div class="textbox" id="textn" style="top:150px; left:270px;"> نعيماً->NA’IMAN
+<br>by Ameer
+<br><br>
+lit. “bliss”, is an arabic expression used as a 
+compliment/congratulation to someone who recently had 
+a haircut or just had a shower
+</div>
+  </p>
+
+  <p>
+    <img src="bademjan.jpeg" style="bottom: 150px; right:250px;" onclick="toggleDiv('textj')">
+    <div class="textbox" id="textj" style="bottom:180px; right:300px;"> کشک و بادمجان->KASHK-E BADEMJAN
+<br>by Sara
+<br><br>
+(for two people)
+Ingredient:
+2 eggplants
+1 onion
+1 tablespoon dried mint
+3-4 garlic cloves
+3 tablespoons kashk 
+(or substitute with Greek 
+yogurt + a little salt)
+1/2 teaspoon turmeric
+Salt, Pepper, Oil
+<br><br>
+Peel the eggplants, cut them in half, and 
+sprinkle a little salt on top. Heat the oil 
+in a pan and fry the eggplants until soft and golden brown. Remove and set aside. Cook the onions and garlic. 
+Fry the chopped onions until golden brown, add the garlic and turmeric, salt, and pepper. 
+Add the eggplants to the pan and mash them with a fork or blender until smooth. Add the kask. 
+Reduce the heat and cook for 5-7 minutes. Then Noshe_E_Jan
+</div>
+  </p>
+
+  <img src="Isrif.jpeg" style="top: 200px; left:280px;" onclick="toggleDiv('text-i')">
+    <div class="textbox" id="text-i" style="top:250px; left:300px;"> إصرف ما في الجيب يأتيك ما في الغيب -> ISRIF MA FI AL-JAYB, YA'TI MA FI
+<br>by Ameer
+<br><br>
+Spend and God will send.
+An Arab proverb that invites one not to be 
+stingy or overly anxious about 
+future finances, trusting that one’s 
+needs will be met.
+</div>
+  </p>
+
+</div>
 
 <script>
-const div = document.getElementById("myDIV");
 const button = document.getElementById("hideBtn");
-const images = document.querySelectorAll(".koskhol, .baciarsiigomiti");
+const images = document.querySelectorAll("#images img");
 
-button.addEventListener("click", () => {
-  div.style.display = "none";
 
-  images.forEach(img => {
-    img.style.visibility = "visible";
-    img.style.opacity = "0.18";
-  });
+button.addEventListener("click", function() {
+  button.style.display = "none";
+  images.forEach(img => img.style.opacity = 1);
 });
+
+function toggleDiv(id) {
+  const el = document.getElementById(id);
+  el.style.display = el.style.display === "block" ? "none" : "block";
+  el.style.zIndex = 9999;
+}
 </script>
-
-
-
-<script>
-const linked = document.getElementById("linkedImage");
-
-const links = {
-  k: "ktesto.png",
-  b: "btesto.jpeg"
-};
-
-let active = null;
-
-images.forEach(img => {
-  img.addEventListener("click", () => {
-
-    if (active === img) {
-      img.style.opacity = "0.18";
-      linked.style.opacity = "0";
-      linked.style.visibility = "hidden";
-      active = null;
-      return;
-    }
-
-    images.forEach(i => i.style.opacity = "0.18");
-
-    img.style.opacity = "1";
-    linked.src = links[img.id];
-    linked.style.visibility = "visible";
-    linked.style.opacity = "1";
-
-    active = img;
-  });
-});
-</script>
-
-
-
 
 </body>
 </html>
