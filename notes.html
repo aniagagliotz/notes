@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
 <link rel="stylesheet" href="https://use.typekit.net/vjq3fgl.css">
 <link rel="stylesheet" href="notes.css">
 <style>
@@ -31,10 +32,9 @@ padding-top: 15vh;
 
 #images img {
   position: absolute;
-  opacity: 0;
+  display: none;
   width: 200px;
   cursor: pointer;
-  transition: opacity 1s ease;
   border:1px;
 }
 
@@ -52,10 +52,11 @@ font-style: normal;
 font-size: 12px;
 }
 
-#textj{
-  font-family: "noto-sans", sans-serif;
+#textj #fa {
+font-family: "noto-sans-arabic", sans-serif;
 font-weight: 400;
-font-style: italic;
+font-style: normal;
+  font-size: 14px;
 }
 
 .fixed-text{
@@ -98,6 +99,35 @@ font-weight: 400;
   user-select: none;    
   z-index: 9999; 
 }
+
+#output {
+  font-family: "noto-sans", sans-serif;
+  font-weight: 100;
+  font-size: 12px;
+  position: fixed;      
+  top: 504px;         
+  left: 36px;  
+  width: 85vw;          
+  max-height: 300px;     
+  overflow-y: auto;      
+  background-color: transparent; 
+  padding: 0px;        
+  color: #000000;   
+  z-index: 10000;        
+  border: transparent;
+  line-height: 0.8%;
+}
+
+#clearOutput {
+  position: fixed;
+  bottom: 36px;      
+  left: 36px;        
+  z-index: 10001;    
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
 </style>
 </head>
 <body>
@@ -118,13 +148,14 @@ font-weight: 400;
   </div>
 </form>
 <div id="output"></div>
+<button id="clearOutput">Clear</button>
 
 
 <div id="images">
 
-  <p>
-    <img src="baciarsiigomiti.jpeg" style="top:200px; left:88px;" onclick="toggleDiv('textb')">
-    <div class="textbox" id="textb" style="top:320px; left:100px;">
+<p>
+<img src="baciarsiigomiti.jpeg" style="top:200px; left:88px;" onclick="toggleDiv('textb')">
+<div class="textbox" id="textb" style="top:320px; left:100px;">
 BACIARSI I GOMITI <br>by me
 <br><br>
 (to kiss one’s elbows) <br>
@@ -137,41 +168,45 @@ unexpected, wonderful event.
 <br><br>
 -If I get that promotion, I’ll kiss my elbows!
 </div>
-  </p>
+</p>
 
   <p>
-    <img src="koskhol.jpeg" style="top:75px; left:108px;" onclick="toggleDiv('textk')">
-    <div class="textbox" id="textk" style="top:200px; left:50px;">کصخل->KOSKHOL
-<br>by Erphaneh & Sara
-<br><br>
-idiot <br>
-It is a persian vulgar way (street language) of saying idiot. 
-It litteraly means crazy pussy. 
-I don’t know why we use the word pussy in everything but it must 
-have 10000 year old root cause.
-<br><br>
--Could there be a bigger koskhol 
-than you? <br>
--stop your koskhol bazi (fooling 
-around) and get your ass over 
-here
-</div>
+  <img src="koskhol.jpeg" style="top:75px; left:108px;" onclick="toggleDiv('textk')">
+  <div class="textbox" id="textk" style="top:200px; left:50px;">
+    <span class="fa">کصخل</span> -> KOSKHOL
+    <br>by Erphaneh & Sara
+    <br><br>
+    idiot <br>
+    It is a persian vulgar way (street language) of saying idiot. 
+    It litteraly means crazy pussy. 
+    I don’t know why we use the word pussy in everything but it must 
+    have 10000 year old root cause.
+    <br><br>
+    -Could there be a bigger koskhol 
+    than you? <br>
+    -stop your koskhol bazi (fooling 
+    around) and get your ass over 
+    here
+  </div>
   </p>
 
-  <p>
-    <img src="naiman.jpeg" style="top:60px; left:250px;" onclick="toggleDiv('textn')">
-    <div class="textbox" id="textn" style="top:150px; left:270px;"> نعيماً->NA’IMAN
+
+<p>
+<img src="naiman.jpeg" style="top:60px; left:250px;" onclick="toggleDiv('textn')">
+<div class="textbox" id="textn" style="top:150px; left:270px;">
+<span id="fa" class="fa-text">نعيماً</span> -> NA’IMAN
 <br>by Ameer
 <br><br>
 lit. “bliss”, is an arabic expression used as a 
 compliment/congratulation to someone who recently had 
 a haircut or just had a shower
 </div>
-  </p>
+</p>
 
-  <p>
-    <img src="bademjan.jpeg" style="bottom: 150px; right:250px;" onclick="toggleDiv('textj')">
-    <div class="textbox" id="textj" style="bottom:180px; right:300px;"> کشک و بادمجان->KASHK-E BADEMJAN
+<p>
+<img src="bademjan.jpeg" style="bottom: 150px; right:250px;" onclick="toggleDiv('textj')">
+<div class="textbox" id="textj" style="bottom:180px; right:300px;">
+<span id="fa" class="fa-text">کشک و بادمجان</span> -> KASHK-E BADEMJAN
 <br>by Sara
 <br><br>
 (for two people)
@@ -193,10 +228,12 @@ Fry the chopped onions until golden brown, add the garlic and turmeric, salt, an
 Add the eggplants to the pan and mash them with a fork or blender until smooth. Add the kask. 
 Reduce the heat and cook for 5-7 minutes. Then Noshe_E_Jan
 </div>
-  </p>
+</p>
 
-  <img src="Isrif.jpeg" style="top: 200px; left:280px;" onclick="toggleDiv('text-i')">
-    <div class="textbox" id="text-i" style="top:250px; left:300px;"> إصرف ما في الجيب يأتيك ما في الغيب -> ISRIF MA FI AL-JAYB, YA'TI MA FI
+<p>
+<img src="Isrif.jpeg" style="top: 200px; left:280px;" onclick="toggleDiv('text-i')">
+<div class="textbox" id="text-i" style="top:250px; left:300px;"> 
+<span id="fa" class="fa-text"> إصرف ما في الجيب يأتيك ما في الغيب</span> -> ISRIF MA FI AL-JAYB, YA'TI MA FI AL-GHAYB
 <br>by Ameer
 <br><br>
 Spend and God will send.
@@ -205,7 +242,7 @@ stingy or overly anxious about
 future finances, trusting that one’s 
 needs will be met.
 </div>
-  </p>
+</p>
 
 </div>
 
@@ -215,8 +252,8 @@ const images = document.querySelectorAll("#images img");
 
 
 button.addEventListener("click", function() {
-  button.style.display = "none";
-  images.forEach(img => img.style.opacity = 1);
+  // button.style.display = "none";
+  images.forEach(img => img.style.display = 'block');
 });
 
 function toggleDiv(id) {
@@ -224,6 +261,44 @@ function toggleDiv(id) {
   el.style.display = el.style.display === "block" ? "none" : "block";
   el.style.zIndex = 9999;
 }
+
+  const form = document.getElementById('outer-circle');
+  const textarea = document.getElementById('textinput');
+  const output = document.getElementById('output');
+
+  // Load saved content on page load
+  const savedText = JSON.parse(localStorage.getItem('savedText')) || [];
+  savedText.forEach(text => addText(text));
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    const value = textarea.value.trim();
+    if (!value) return;
+
+    addText(value);
+
+    // Save to localStorage
+    savedText.push(value);
+    localStorage.setItem('savedText', JSON.stringify(savedText));
+
+    textarea.value = '';
+  });
+
+  function addText(text) {
+    const p = document.createElement('p');
+    p.textContent = text; // text-only (safe)
+    output.appendChild(p);
+  }
+
+  const clearBtn = document.getElementById('clearOutput');
+clearBtn.addEventListener('click', () => {
+  output.innerHTML = '';             // svuota il div
+  localStorage.removeItem('savedText'); // cancella eventuali annotazioni salvate
+});
+
+
+
 </script>
 
 </body>

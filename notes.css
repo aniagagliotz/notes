@@ -8,7 +8,7 @@
   cursor: pointer;
 }
 
-.outer-circle {
+#outer-circle {
   position: fixed;      
   top: 50px;
   right: 50px;
@@ -55,8 +55,8 @@ font-weight: 400;
 .isrif,
 .bademjan {
   position: absolute;  
-  opacity: 0;
   cursor: pointer;
+  /* display: none; */
 }
 
 .koskhol {
