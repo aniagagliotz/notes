@@ -29,7 +29,7 @@
   }
 </script>
 
-
+(for me to remember)
 <p>
 <img src="Isrif.jpeg" style="top: 60px; left:280px;" onclick="toggleDiv('text-i')">
 <div class="textbox" id="text-i" style="top:150px; left:300px;"> 
@@ -43,3 +43,7 @@ future finances, trusting that one’s
 needs will be met.
 </div>
 </p>
+
+(to ask)
+how to upload videos without them being too heavy
+messy output when you write and submit too much text, how to solve it
