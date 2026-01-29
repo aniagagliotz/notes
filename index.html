@@ -23,7 +23,7 @@ padding-top: 15vh;
 #hideBtn {
   font-family: "deseo-medium", sans-serif;
   color: transparent;
-  -webkit-text-stroke: 1px rgb(0, 0, 0);
+  -webkit-text-stroke: 0.07vw rgb(0, 0, 0);
   font-weight: 100;
   font-size: 23vw;
   cursor: pointer;
@@ -33,39 +33,39 @@ padding-top: 15vh;
 #images img {
   position: absolute;
   display: none;
-  width: 15vw;
+  width: 11.5vw;
   cursor: pointer;
-  border:1px;
+  border:0.07vw;
 }
 
 
 .textbox {
   position: absolute;
   background: white;
-  border: 1px solid black;
-  padding: 10px;
+  border: 0.07vw solid black;
+  padding: 0.7vw;
   display: none;
-  width: 500px;
+  width: 36.6vw;
   font-family: "noto-sans", sans-serif;
 font-weight: 400;
 font-style: normal;
-font-size: 12px;
+font-size: 0.833vw;
 }
 
 #textj #fa {
 font-family: "noto-sans-arabic", sans-serif;
 font-weight: 400;
 font-style: normal;
-  font-size: 14px;
+  font-size: 0.972vw;
 }
 
 .fixed-text{
 position: fixed;      
-  top: 36px;            
-  left: 36px;  
+  top: 2.6vw;            
+  left: 2.6vw;  
   font-family: "noto-sans", sans-serif;
 font-weight: 400;         
-  font-size: 12px;
+  font-size: 0.833vw;
   font-style: italic;
   color: black;
   pointer-events: none; 
@@ -75,11 +75,11 @@ font-weight: 400;
 
 .fixed-text2{
 position: fixed;      
-  bottom: 36px;            
-  right: 36px;  
+  bottom: 2.6vw;            
+  right: 2.6vw;  
   font-family: "noto-sans", sans-serif;
 font-weight: 400;         
-  font-size: 12px;
+  font-size: 0.833vw;
   font-style: italic;
   color: black;
   pointer-events: none; 
@@ -89,12 +89,12 @@ font-weight: 400;
 
 .fixed-text3 {
   position: fixed;      
-  top: 50px;            
-  right: 180px;  
+  top: 3.6vw;            
+  right: 11.5vw;  
   font-family: "noto-sans", sans-serif;
 font-weight: 400;     
   color: black;  
-  font-size: 12px;
+  font-size: 0.833vw;
   pointer-events: none; 
   user-select: none;    
   z-index: 9999; 
@@ -103,15 +103,15 @@ font-weight: 400;
 #output {
   font-family: "noto-sans", sans-serif;
   font-weight: 100;
-  font-size: 12px;
+  font-size: 0.833vw;
   position: fixed;      
-  top: 550px;         
-  left: 36px;  
-  width: 85vw;          
-  max-height: 300px;     
-  overflow-y: auto;      
+  bottom: 4.5vw;         
+  left: 2.6vw;  
+  width: 95vw;          
+  max-height: 8vw; 
+  overflow-y: scroll;         
   background-color: transparent; 
-  padding: 0px;        
+  padding: 0;        
   color: #000000;   
   z-index: 10000;        
   border: transparent;
@@ -120,11 +120,20 @@ font-weight: 400;
 
 #clearOutput {
   position: fixed;
-  bottom: 36px;      
-  left: 36px;        
+  bottom: 2.6vw;      
+  left: 2.6vw;        
   z-index: 10001;    
-  padding: 5px 10px;
-  font-size: 12px;
+  padding: 0.36vw 0.73vw;
+  font-size: 0.833vw;
+  cursor: pointer;
+}
+
+input[type="submit"] {
+  position: fixed;
+  top: 13.5vw;            
+  right: 3.5vw; 
+  padding: 0.36vw 0.73vw;
+  font-size: 0.833vw;
   cursor: pointer;
 }
 
@@ -174,8 +183,8 @@ font-weight: 400;
   </p>
 
 <p>
-<img src="naiman.jpeg" style="top:200px; left:242px;" onclick="toggleDiv('textn')">
-<div class="textbox" id="textn" style="top:110px; left:262px;">
+<img src="naiman.jpeg" style="top:14.6vw; left:17.7vw;" onclick="toggleDiv('textn')">
+<div class="textbox" id="textn" style="top:8vw; left:0.19vw;">
 <span id="fa" class="fa-text">نعيماً</span> -> NA’IMAN
 <br>by Ameer
 <br><br>
@@ -186,8 +195,8 @@ a haircut or just had a shower
 </p>
 
 <p>
-<img src="baciarsiigomiti.jpeg" style="top:220px; left:80px;" onclick="toggleDiv('textb')">
-<div class="textbox" id="textb" style="top:330px; left:90px;">
+<img src="baciarsiigomiti.jpeg" style="top:16.1vw; left:5.8vw;" onclick="toggleDiv('textb')">
+<div class="textbox" id="textb" style="top:24.1vw; left:6.5vw;">
 BACIARSI I GOMITI <br>by me
 <br><br>
 (to kiss one’s elbows) <br>
@@ -203,8 +212,8 @@ unexpected, wonderful event.
 </p>
 
 <p>
-<img src="Isrif.jpeg" style="top: 400px; left:180px;" onclick="toggleDiv('text-i')">
-<div class="textbox" id="text-i" style="top:500px; left:200px;"> 
+<img src="Isrif.jpeg" style="top: 29.2vw; left:13.1vw;" onclick="toggleDiv('text-i')">
+<div class="textbox" id="text-i" style="top:36.6vw; left:14.6vw;"> 
 <span id="fa" class="fa-text"> إصرف ما في الجيب يأتيك ما في الغيب</span> -> ISRIF MA FI AL-JAYB, YA'TI MA FI AL-GHAYB
 <br>by Ameer
 <br><br>
@@ -217,8 +226,8 @@ needs will be met.
 </p>
 
 <p>
-<img src="salirò.jpeg" style="top:210px; left:700px;" onclick="toggleDiv('texts')">
-<div class="textbox" id="texts" style="top:280px; left:650px;"> SALIRÒ
+<img src="salirò.jpeg" style="top:14.6vw; left:43.9vw;" onclick="toggleDiv('texts')">
+<div class="textbox" id="texts" style="top:20.4vw; left:47.5vw;"> SALIRÒ
 <br>Daniele Silvestri, 2002<br><br>
 <video controls width="250">
 <source src="videosalirò2.mp4" type="video/mp4" />
@@ -226,8 +235,8 @@ needs will be met.
 </p>
 
 <p>
-<img src="googoosh.jpeg" style="top:410px; left:600px;" onclick="toggleDiv('textg')">
-<div class="textbox" id="textg" style="top:480px; left:350px;">
+<img src="googoosh.jpeg" style="top:29.2vw; left:43.9vw;" onclick="toggleDiv('textg')">
+<div class="textbox" id="textg" style="top:35.1vw; left:25.6vw;">
 <span id="fa" class="fa-text">نیمه گمشده من</span> -> NIMEYE GOMSHODEYE MAN
 <br>Googoosh, 1989<br><br>
 <video controls width="250">
@@ -236,8 +245,8 @@ needs will be met.
 </p>
 
 <p>
-<img src="divaneh.jpeg" style="top:425px; left:750px;" onclick="toggleDiv('textd')">
-<div class="textbox" id="textd" style="top:460px; left:600px;">
+<img src="divaneh.jpeg" style="top:32.9vw; left:57.1vw;" onclick="toggleDiv('textd')">
+<div class="textbox" id="textd" style="top:33.6vw; left:43.9vw;">
   <div class="content-row">
     <div class="text-content">
       <span id="fa" class="fa-text">دیوانه</span> -> DIVANEH
@@ -275,8 +284,18 @@ needs will be met.
 </p>
 
 <p>
-<img src="bademjan.jpeg" style="bottom: 150px; right:250px;" onclick="toggleDiv('textj')">
-<div class="textbox" id="textj" style="bottom:90px; right:50px;">
+<img src="shab.jpeg" style="top:20.4vw; left:60.7vw;" onclick="toggleDiv('texth')">
+<div class="textbox" id="texth" style="top:33.6vw; left:47.5vw;">
+      <span id="fa" class="fa-text">شب</span> -> SHAB
+      <br>Faramarz Aslani, 2008<br><br>
+    <video controls width="250">
+    <source src="" type="video/mp4">
+</div>
+</p>
+
+<p>
+<img src="bademjan.jpeg" style="top: 25vw; right:10vw;" onclick="toggleDiv('textj')">
+<div class="textbox" id="textj" style="bottom:6.5vw; right:3.6vw;">
 <span id="fa" class="fa-text">کشک و بادمجان</span> -> KASHK-E BADEMJAN
 <br>by Sara
 <br><br>

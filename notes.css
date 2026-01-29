@@ -1,33 +1,33 @@
 #hideBtn {
   font-family: "deseo-medium", sans-serif;
   color: transparent;
-  -webkit-text-stroke: 1px black;
+  -webkit-text-stroke: 0.07vw black;
   font-weight: 100;
-  font-size: 340px;
+  font-size: 24.8vw;
   position: relative;
   cursor: pointer;
 }
 
 #outer-circle {
   position: fixed;      
-  top: 50px;
-  right: 50px;
+  top: 3.66vw;
+  right: 3.66vw;
   width: 15vw;             
   height: 15vw;
-  border: 1px solid black;  
+  border: 0.07vw solid black;  
   border-radius: 50%;       
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
   background: transparent; 
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 0 0 0.73vw rgba(0,0,0,0.3);
 }
 
 .inner-circle {
   width: 13vw;            
   height: 13vw;
-  border: 1px solid black;
+  border: 0.07vw solid black;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -41,7 +41,7 @@
   border: none;
   outline: none;
   resize: none;
-  font-size: 14px;
+  font-size: 0.972vw;
    font-family: "noto-sans", sans-serif;
 font-weight: 400;         
   background: transparent;
@@ -59,45 +59,25 @@ font-weight: 400;
   /* display: none; */
 }
 
-.koskhol {
-  width: 200px;
-}
-
-.baciarsiigomiti {
-  width: 200px;
-}
-
-.naiman {
-width: 200px;
-}
-
-.isrif {
-width: 200px;
-}
-
-.bademjan {
-width: 200px;
-}
-
 .textbox {
   position: fixed;
   background: white;
-  border: 2px solid black;
-  padding: 10px;
+  border: 0.14vw solid black;
+  padding: 0.73vw;
   display: none;
-  width: 700px;
+  width: 51.2vw;
   z-index: 9999;
 }
 
 .content-row {
   display: flex;
-  gap: 20px;
+  gap: 1.46vw;
   align-items: flex-start;
 }
 
 .text-content {
-  max-width: 420px;
-  max-height: 300px;
+  max-width: 30.74vw;
+  max-height: 21.96vw;
   overflow: scroll;
 }
 
