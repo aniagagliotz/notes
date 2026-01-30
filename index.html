@@ -11,6 +11,7 @@ body {
   padding: 0;
 }
 
+
 #myDIV {
   width: 100vw;
   height: 100vh;
@@ -105,7 +106,7 @@ font-weight: 400;
   font-weight: 100;
   font-size: 0.833vw;
   position: fixed;      
-  bottom: 4.5vw;         
+  bottom: 6vw;         
   left: 2.6vw;  
   width: 95vw;          
   max-height: 8vw; 
@@ -128,13 +129,38 @@ font-weight: 400;
   cursor: pointer;
 }
 
-input[type="submit"] {
-  position: fixed;
-  top: 13.5vw;            
-  right: 3.5vw; 
-  padding: 0.36vw 0.73vw;
-  font-size: 0.833vw;
-  cursor: pointer;
+
+input[type="submit"].submit {
+    width: 5vw; 
+    height: 5vw;
+    background-image: url('submit.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent; 
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 10vw;
+    right: 1vw;
+}
+
+.clear {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.clear img {
+    width: 4vw;  
+    height: auto;
+    display: block;
+}
+
+.clear:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
 }
 
 </style>
@@ -153,12 +179,13 @@ input[type="submit"] {
 <form id="outer-circle">
   <div class="inner-circle">
     <textarea id="textinput" placeholder="Annotazioni..."></textarea>
-    <input type="submit" value="submit">
+    <input type="submit" value="" class="submit">
   </div>
 </form>
 <div id="output"></div>
-<button id="clearOutput">clear</button>
-
+<button id="clearOutput" class="clear">
+    <img src="clear.png" alt="Clear">
+</button>
 
 <div id="images">
 
