@@ -59,11 +59,16 @@ transform: scale(1.1);
 }
 
 .modal-container {
-  position: fixed; top: 60%; left: 75%; transform: translate(-50%, -50%);
-  background: white; width: 30vw; max-height: 35vw;/* Rimossa opacità per leggibilità */
-  display: none; z-index: 10005; border-radius: 0.7vw; overflow: hidden;
-  box-shadow: 0 0.732vw 2.928vw rgba(0,0,0,0.5); border: 0.015vw solid black; 
+  position: absolute; 
+  background: white; 
+  width: 25vw; 
+  max-height: 28vw;
+  display: none; 
+  z-index: 10005; 
+  box-shadow: 0 0.732vw 2.928vw rgba(0,0,0,0.5); 
+  border: 0.015vw solid black; 
   overflow-y: auto; overflow-x: hidden;
+  pointer-events: all; 
 }
 
 .modal-content { display: flex; width: 100%; height: 100%; }
@@ -79,12 +84,11 @@ transform: scale(1.1);
   top: 0.732vw; 
   right: 1.098vw; 
   color: rgb(0, 0, 0);
-  font-size: 40px; 
+  font-size: 2.6vw; 
   cursor: pointer; 
   z-index: 11000; 
   display: none; 
-  font-family: "deseo-medium", sans-serif; 
-  font-weight: 800;
+  font-family: "noto-sans", sans-serif; 
 }
 
 #images img { 
@@ -100,7 +104,7 @@ transform: scale(1.1);
 .scaled-thumb {
   width: 25vw !important;
   z-index: 10002 !important;
-  transform: scale(1); /* Reset dell'hover precedente */
+  transform: scale(1); 
   filter: brightness(1);
 }
 
@@ -117,7 +121,7 @@ transform: scale(1.1);
 
 #output p {
   padding-left: 0.5vw;
-  border-left: 1px solid #000000; /* Giusto un accenno di separazione */
+  border-left: 1px solid #000000; 
 }
 
 .fa-text { font-family: "noto-sans-arabic", sans-serif; font-size: 0.833vw; }
@@ -305,26 +309,53 @@ let activeModal = null;
 let activeThumb = null;
 let highestZ = 10001;
 
+// Mostra le immagini e disattiva l'hover sul tasto NOTES
 hideBtn.addEventListener("click", () => {
   thumbs.forEach(img => img.style.display = 'block');
+  hideBtn.classList.add("active"); 
 });
 
 window.openModal = function(id, thumbElement) {
+  // 1. Reset: se c'era un'altra immagine aperta, la chiudiamo
+  if(activeModal) {
+    activeModal.style.display = 'none';
+    activeModal.querySelectorAll('video').forEach(v => v.pause());
+  }
   if(activeThumb) activeThumb.classList.remove('scaled-thumb');
 
+  // 2. Ingrandimento immagine
   thumbElement.classList.add('scaled-thumb');
   activeThumb = thumbElement;
 
   const modal = document.getElementById(id);
+  
+  // 3. Aspetta che l'immagine finisca di ingrandirsi (400ms) per calcolare la posizione
+  setTimeout(() => {
+    const rect = thumbElement.getBoundingClientRect(); 
+    const offset = window.innerWidth * 0.02; // 2vw di spazio
+    const modalWidth = window.innerWidth * 0.25; // 25vw definita nel CSS
 
-  modal.insertBefore(closeX, modal.firstChild);
+    // Calcolo della posizione orizzontale (Left)
+    let finalLeft = rect.right + offset;
 
-  highestZ++;
-  modal.style.zIndex = highestZ;
-  modal.style.display = 'block';
-  overlay.style.display = 'block';
-  closeX.style.display = 'block';
-  activeModal = modal;
+    // Se il modale esce dal bordo destro dello schermo, lo sposta a sinistra dell'immagine
+    if (finalLeft + modalWidth > window.innerWidth) {
+      finalLeft = rect.left - modalWidth - offset;
+    }
+
+    // Applica coordinate dinamiche basate sulla posizione finale dell'immagine
+    modal.style.top = (rect.top + window.scrollY) + "px"; 
+    modal.style.left = finalLeft + "px";
+
+    // 4. Gestione elementi UI e apparizione
+    modal.insertBefore(closeX, modal.firstChild);
+    highestZ++;
+    modal.style.zIndex = highestZ;
+    modal.style.display = 'block';
+    overlay.style.display = 'block';
+    closeX.style.display = 'block';
+    activeModal = modal;
+  }, 400); // Sincronizzato con transition: width 0.4s
 };
 
 function closeAll() {
@@ -353,6 +384,7 @@ form.addEventListener('submit', e => {
   const p = document.createElement('p');
   p.textContent = val;
   output.appendChild(p);
+  output.scrollTop = output.scrollHeight; 
   textarea.value = '';
 });
 
