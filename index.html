@@ -8,14 +8,33 @@
 
 body { margin: 0; padding: 0; background-color: white; font-family: "noto-sans", sans-serif; }
 
+@font-face {
+  font-family: 'noto-sans';
+  src: url('NotoSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'noto-sans';
+  src: url('NotoSans-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
 #myDIV {
 width: 100vw; height: 100vh; position: fixed;
-text-align: center; padding-top: 15vh; z-index: 1;
+text-align: center; padding-top: 25vh; z-index: 1;
 }
 
 #hideBtn {
-font-family: "deseo-medium", sans-serif; color: transparent;
--webkit-text-stroke: 0.07vw black; font-size: 23vw; cursor: pointer;
+cursor: pointer;
+display: inline-block;
+}
+
+#hideBtn img {
+width: 87vw; 
+height: auto;
 }
 
 .fixed-text, .fixed-text2 { position: fixed; font-size: 0.833vw; font-style: italic; z-index: 1000; pointer-events: none; }
@@ -132,7 +151,11 @@ border-left: 1px solid #000000;
 <div id="overlay"></div>
 <div id="close-x" class="close-x">&times;</div>
 
-<div id="myDIV"><a id="hideBtn">NOTES</a></div>
+<div id="myDIV">
+  <a id="hideBtn">
+    <img src="notes.png" alt="NOTES">
+  </a>
+</div>
 
 <div class="fixed-text">notes</div>
 <div class="fixed-text2">*source: mainly my roommates</div>
@@ -359,7 +382,6 @@ let activeModal = null;
 let activeThumb = null;
 let highestZ = 10001;
 
-// Mostra le immagini e disattiva l'hover sul tasto NOTES
 hideBtn.addEventListener("click", () => {
 thumbs.forEach(img => img.style.display = 'block');
 hideBtn.classList.add("active");
